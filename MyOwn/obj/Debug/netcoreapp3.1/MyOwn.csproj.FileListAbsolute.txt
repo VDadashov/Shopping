@@ -1,0 +1,14 @@
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.exe
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.deps.json
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.runtimeconfig.json
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.runtimeconfig.dev.json
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.dll
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\bin\Debug\netcoreapp3.1\MyOwn.pdb
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.csproj.AssemblyReference.cache
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.AssemblyInfoInputs.cache
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.AssemblyInfo.cs
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.csproj.CoreCompileInputs.cache
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.dll
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.pdb
+C:\Users\Vusal Dadasov\OneDrive\Masaüstü\CodeAcademy\C#\Practice\Shopping\MyOwn\obj\Debug\netcoreapp3.1\MyOwn.genruntimeconfig.cache
