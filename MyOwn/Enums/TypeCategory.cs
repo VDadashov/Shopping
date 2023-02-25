@@ -6,8 +6,8 @@ namespace MyOwn.Enums
 {
     internal enum TypeCategory
     {
-        SmartPhone,
-        Notebook,
-        Tv,
+        SmartPhone=0,
+        Notebook=1,
+        Tv=2,
     }
 }

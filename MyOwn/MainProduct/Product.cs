@@ -9,7 +9,7 @@ namespace MyOwn.MainProduct
     internal abstract class Product
     {
         #region Field
-        public static TypeCategory Category;
+        public TypeCategory Category;
         public string Model;
         double _price;
         double _disCountPercent;
