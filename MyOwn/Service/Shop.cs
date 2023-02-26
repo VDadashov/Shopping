@@ -76,11 +76,11 @@ namespace MyOwn.Service
             return count;
         }
 
-        public void RemoveProduct(TypeCategory category,string model)
+        public void RemoveProduct(TypeCategory category,string value)
         {
             foreach (var item in Products)
             {
-                if (item.Category == category)
+                if (item.Category == category && item.Model.Contains(value))
                 {
                     Products.Remove(item);
                     break;
@@ -88,14 +88,18 @@ namespace MyOwn.Service
             }
         }
 
-        public void RemoveProduct(Product product, int index)
+        public List<Product> Search(TypeCategory category, string value)
         {
-            throw new NotImplementedException();
-        }
+            List<Product> wantedProducts = new List<Product>();
 
-        public List<Product> Search(string value)
-        {
-            throw new NotImplementedException();
+            foreach (var item in Products)
+            {
+                if(item.Category == category && item.Model.Contains(value))
+                {
+                    wantedProducts.Add(item);
+                }
+            }
+            return wantedProducts;
         }
     }
 }

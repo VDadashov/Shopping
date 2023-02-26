@@ -34,6 +34,7 @@ namespace MyOwn
                 switch (option)
                 {
                     case "1":
+
                         string opt;
                         do
                         {
@@ -41,7 +42,7 @@ namespace MyOwn
                             Console.WriteLine("2. Rengine gore axtarish");
                             Console.WriteLine("3. Ram a gore axtarish");
                             Console.WriteLine("4. Endirimli mehsullari gorset");
-                            Console.WriteLine("----Menyu'dan cixmaq ucun Q ye basin----\n");
+                            Console.WriteLine("----Main Menyu qayitmaq ucun Q ye basin----\n");
 
                             Console.Write("Secim: ");
                             opt=Console.ReadLine();
@@ -62,10 +63,120 @@ namespace MyOwn
                         } while (opt != "Q");
                         break;
                     case "2":
+
+                        do
+                        {
+                            Console.WriteLine("1. Butun Notebooklar'i gorset");
+                            Console.WriteLine("2. Rengine gore axtarish et");
+                            Console.WriteLine("3. SSD e gore axtarish et");
+                            Console.WriteLine("4. Endirimli Mehsullara bax");
+                            Console.WriteLine("----Main Menyu qayitmaq ucun Q ye basin----\n");
+
+                            Console.Write("Secim: ");
+                            opt = Console.ReadLine();
+
+                            switch (opt)
+                            {
+                                case "1":
+                                    break;
+                                case "2":
+                                    break;
+                                case "3":
+                                    break;
+                                case "4":
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        } while (opt != "Q");
+
                         break;
                     case "3":
+
+                        do
+                        {
+                            Console.WriteLine("1. Butun Tv'ler i gorset");
+                            Console.WriteLine("2. Smart Tv dir'mi?");
+                            Console.WriteLine("3. Voice Control var'mi?");
+                            Console.WriteLine("4. Endirimli mehsullara bax");
+                            Console.WriteLine("----Main Menyu qayitmaq ucun Q ye basin----\n");
+
+                            Console.Write("Secim: ");
+                            opt = Console.ReadLine();
+
+                            switch (opt)
+                            {
+                                case "1":
+                                    break;
+                                case "2":
+                                    break;
+                                case "3":
+                                    break;
+                                case "4":
+                                    break;
+                                default:
+                                    break;
+                            }
+                        } while (opt != "Q");
+
                         break;
                     case "4":
+
+                        Console.WriteLine("---Own Category---");
+                        foreach (var item in Enum.GetValues(typeof(TypeCategory)))
+                        {
+                            Console.WriteLine($"{item} - {(int)item}");
+                        }
+
+                        Console.WriteLine("-----------");
+                        string categoryStr;
+                        object category;
+                        do
+                        {
+                            Console.Write("Category:");
+                            categoryStr= Console.ReadLine();
+                        } while (!Enum.TryParse(typeof(TypeCategory),categoryStr,out category));
+
+                        Console.Write("Model: ");
+                        string model = Console.ReadLine();
+
+                        string priceStr;
+                        double price;
+                        do
+                        {
+                            Console.Write("Price: ");
+                            priceStr= Console.ReadLine();
+
+                        } while (!double.TryParse(priceStr,out price));
+
+                        string disCountPercentStr;
+                        double disCountPercent;
+                        do
+                        {
+                            Console.Write("DisCountPercent: ");
+                            disCountPercentStr= Console.ReadLine();
+
+                        } while (!double.TryParse(disCountPercentStr,out disCountPercent));
+
+                        if (Convert.ToString(category) == "SmartPhone")
+                        {
+                            Console.WriteLine("---Available colors---");
+                            foreach (var item in Enum.GetValues(typeof(TypeColorSP)))
+                            {
+                                Console.WriteLine($"{item} - {(int)item}");
+                            }
+
+                            Console.WriteLine("-----------");
+                            string colorStr;
+                            object color;
+                            do
+                            {
+                                Console.Write("Color: ");
+                                colorStr= Console.ReadLine();
+
+                            } while (!Enum.TryParse(typeof(TypeColorSP),colorStr,out color));
+                        }
                         break;
                     case "5":
                         break;

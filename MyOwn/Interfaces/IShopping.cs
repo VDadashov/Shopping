@@ -11,8 +11,7 @@ namespace MyOwn.Interfaces
         List<Product> Products { get; set; }
         void AddProduct(Product product);
         void RemoveProduct(TypeCategory category,string model);
-        void RemoveProduct(Product product, int index);
-        List<Product> Search(string value);
+        List<Product> Search(TypeCategory category, string value);
         List<Product> GetDisCountPercent();
         List<Product> GetPriceRange(byte minPrice, byte maxPrice);
         int GetNTcount();
