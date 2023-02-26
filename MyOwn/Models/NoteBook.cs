@@ -52,7 +52,7 @@ namespace MyOwn.Models
 
             if (value.Length != 2) return false;
 
-            if (!char.IsLetter(value[0]) || value[0] != 'i') return false;
+            if (!char.IsLetter(value[0]) || (value[0] != 'i' && value[0] != 'I')) return false;
 
             for (int i = 1; i < value.Length; i++)
             {

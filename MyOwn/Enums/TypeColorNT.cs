@@ -4,7 +4,12 @@ using System.Text;
 
 namespace MyOwn.Enums
 {
-    internal class TypeColorNT
+    internal enum TypeColorNT
     {
+        Dark,
+        White,
+        Black,
+        Brown,
+        Gold
     }
 }
