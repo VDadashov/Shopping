@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.Reflection;
 
 namespace MyOwn
 {
@@ -18,9 +19,9 @@ namespace MyOwn
             string option;
             do
             {
-                Console.WriteLine("\n1. SmartPhone Show");
-                Console.WriteLine("2. Notebook Show");
-                Console.WriteLine("3. Tv Show");
+                Console.WriteLine("\n1. SmartPhone Category");
+                Console.WriteLine("2. Notebook Category");
+                Console.WriteLine("3. Tv Category");
                 Console.WriteLine("4. Mehsul elave et");
                 Console.WriteLine("5. Category ve Model e gore axtarish");
                 Console.WriteLine("6. Qiymetine gore axtarish");
@@ -50,6 +51,7 @@ namespace MyOwn
                             switch (opt)
                             {
                                 case "1":
+                                    KontaktHome.GetSmartPhone();
                                     break;
                                 case "2":
                                     break;
@@ -123,6 +125,7 @@ namespace MyOwn
                         break;
                     case "4":
 
+                        #region Mainfeatures
                         Console.WriteLine("---Own Category---");
                         foreach (var item in Enum.GetValues(typeof(TypeCategory)))
                         {
@@ -135,8 +138,8 @@ namespace MyOwn
                         do
                         {
                             Console.Write("Category:");
-                            categoryStr= Console.ReadLine();
-                        } while (!Enum.TryParse(typeof(TypeCategory),categoryStr,out category));
+                            categoryStr = Console.ReadLine();
+                        } while (!Enum.TryParse(typeof(TypeCategory), categoryStr, out category));
 
                         Console.Write("Model: ");
                         string model = Console.ReadLine();
@@ -146,37 +149,74 @@ namespace MyOwn
                         do
                         {
                             Console.Write("Price: ");
-                            priceStr= Console.ReadLine();
+                            priceStr = Console.ReadLine();
 
-                        } while (!double.TryParse(priceStr,out price));
+                        } while (!double.TryParse(priceStr, out price));
 
                         string disCountPercentStr;
                         double disCountPercent;
                         do
                         {
                             Console.Write("DisCountPercent: ");
-                            disCountPercentStr= Console.ReadLine();
+                            disCountPercentStr = Console.ReadLine();
 
-                        } while (!double.TryParse(disCountPercentStr,out disCountPercent));
+                        } while (!double.TryParse(disCountPercentStr, out disCountPercent));
+                        #endregion
+
+                        #region AddSmartPhone
+
+                        SmartPhone wantedPhone = new SmartPhone();
 
                         if (Convert.ToString(category) == "SmartPhone")
                         {
-                            Console.WriteLine("---Available colors---");
-                            foreach (var item in Enum.GetValues(typeof(TypeColorSP)))
+
+                            wantedPhone.Category = (TypeCategory)category;
+                            wantedPhone.Model = model;
+                            wantedPhone.Price = price;
+                            wantedPhone.DisCountPercent = disCountPercent;
+
+                            SmartPhone(ref wantedPhone);
+
+                            KontaktHome.AddProduct(wantedPhone);
+                        }
+                        #endregion
+
+                        #region AddNotebook
+                        NoteBook wantedNotebook = new NoteBook();
+
+                        if (Convert.ToString(category) == "Notebook")
+                        {
+
+                            wantedNotebook.Category = (TypeCategory) category;
+                            wantedNotebook.Model = model;
+                            wantedNotebook.Price = price;
+                            wantedNotebook.DisCountPercent = disCountPercent;
+
+                            Console.WriteLine("---Avialable Color---");
+                            foreach (var item in Enum.GetValues(typeof(TypeColorNT)))
                             {
                                 Console.WriteLine($"{item} - {(int)item}");
                             }
-
                             Console.WriteLine("-----------");
-                            string colorStr;
+
+                            string colorStr1;
                             object color;
                             do
                             {
                                 Console.Write("Color: ");
-                                colorStr= Console.ReadLine();
+                                colorStr1 = Console.ReadLine();
+                            } while (!Enum.TryParse(typeof(TypeColorNT),colorStr1,out color));
 
-                            } while (!Enum.TryParse(typeof(TypeColorSP),colorStr,out color));
+                            string processor;
+                            do
+                            {
+                                Console.Write("Processor: ");
+                                processor = Console.ReadLine();
+                            } while (!NoteBook.CheckProcessor(processor));
+
+
                         }
+                        #endregion
                         break;
                     case "5":
                         break;
@@ -191,5 +231,69 @@ namespace MyOwn
                 }
             } while (option != "Q");
         }
+
+        static void SmartPhone(ref SmartPhone smartPhone)
+        {
+
+            Console.WriteLine("---Available OP---");
+            foreach (var item in Enum.GetValues(typeof(TypeOPSP)))
+            {
+                Console.WriteLine($"{item} - {(int)item}");
+            }
+
+            Console.WriteLine("-----------");
+
+            string operitingSystemStr;
+            object operitingSystem;
+            do
+            {
+                Console.Write("OP: ");
+                operitingSystemStr = Console.ReadLine();
+            } while (!Enum.TryParse(typeof(TypeOPSP), operitingSystemStr, out operitingSystem));
+
+
+            Console.WriteLine("---Available colors---");
+            foreach (var item in Enum.GetValues(typeof(TypeColorSP)))
+            {
+                Console.WriteLine($"{item} - {(int)item}");
+            }
+
+            Console.WriteLine("-----------");
+
+            string colorStr;
+            object color;
+            do
+            {
+                Console.Write("Color: ");
+                colorStr = Console.ReadLine();
+
+            } while (!Enum.TryParse(typeof(TypeColorSP), colorStr, out color));
+
+            string ramStr;
+            byte ram;
+            do
+            {
+                Console.Write("RAM: ");
+                ramStr = Console.ReadLine();
+            } while (!byte.TryParse(ramStr, out ram) && ram < 32);
+
+            string simCardCountStr;
+            byte simCardCount;
+            do
+            {
+                Console.Write("SimCardCount: ");
+                simCardCountStr = Console.ReadLine();
+            } while (!byte.TryParse(simCardCountStr, out simCardCount) && simCardCount <= 2);
+
+            smartPhone.OperatingSystem = (TypeOPSP)operitingSystem;
+            smartPhone.Color = (TypeColorSP)color;
+            smartPhone.RAM = ram;
+            smartPhone.SimCardCount = simCardCount;
+
+            
+
+        }
+
+
     }
 }

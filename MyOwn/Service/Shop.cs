@@ -101,5 +101,19 @@ namespace MyOwn.Service
             }
             return wantedProducts;
         }
+
+        public List<SmartPhone> GetSmartPhone()
+        {
+            List<SmartPhone> wantedArr = new List<SmartPhone>();
+            foreach (var item in Products)
+            {
+                if (item is SmartPhone)
+                {
+                    var Sp = (SmartPhone)item;
+                    Console.WriteLine($"Model: {Sp.Model} - Price: {Sp.Price} - DisCountPercent: {Sp.DisCountPercent} - OP: {Sp.OperatingSystem} - Color: {Sp.Color} - RAM: {Sp.RAM} - SimCardCount: {Sp.SimCardCount}");
+                }
+            }
+            return wantedArr;
+        }
     }
 }

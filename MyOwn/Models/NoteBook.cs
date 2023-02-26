@@ -46,7 +46,7 @@ namespace MyOwn.Models
 
         #region CheckMethod
 
-        static bool CheckProcessor(string value)
+        public static bool CheckProcessor(string value)
         {
             if (string.IsNullOrEmpty(value)) return false;
 
@@ -65,7 +65,7 @@ namespace MyOwn.Models
             return true;
         }
 
-        static bool CheckVideoCard(string value)
+        public static bool CheckVideoCard(string value)
         {
             if (string.IsNullOrEmpty(value)) return false;
 
