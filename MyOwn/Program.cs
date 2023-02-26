@@ -175,7 +175,7 @@ namespace MyOwn
                             wantedPhone.Price = price;
                             wantedPhone.DisCountPercent = disCountPercent;
 
-                            SmartPhone(ref wantedPhone);
+                            SmartPhoneObject(ref wantedPhone);
 
                             KontaktHome.AddProduct(wantedPhone);
                         }
@@ -186,35 +186,22 @@ namespace MyOwn
 
                         if (Convert.ToString(category) == "Notebook")
                         {
-
-                            wantedNotebook.Category = (TypeCategory) category;
+                            wantedNotebook.Category = (TypeCategory)category;
                             wantedNotebook.Model = model;
                             wantedNotebook.Price = price;
                             wantedNotebook.DisCountPercent = disCountPercent;
 
-                            Console.WriteLine("---Avialable Color---");
-                            foreach (var item in Enum.GetValues(typeof(TypeColorNT)))
-                            {
-                                Console.WriteLine($"{item} - {(int)item}");
-                            }
-                            Console.WriteLine("-----------");
+                            NoteBookObject(ref wantedNotebook);
+                            KontaktHome.AddProduct(wantedNotebook);
+                        }
+                        #endregion
 
-                            string colorStr1;
-                            object color;
-                            do
-                            {
-                                Console.Write("Color: ");
-                                colorStr1 = Console.ReadLine();
-                            } while (!Enum.TryParse(typeof(TypeColorNT),colorStr1,out color));
+                        #region AddTv
+                        Tv wantedTv = new Tv();
 
-                            string processor;
-                            do
-                            {
-                                Console.Write("Processor: ");
-                                processor = Console.ReadLine();
-                            } while (!NoteBook.CheckProcessor(processor));
-
-
+                        if (Convert.ToString(category) == "Tv")
+                        {
+                            
                         }
                         #endregion
                         break;
@@ -232,7 +219,7 @@ namespace MyOwn
             } while (option != "Q");
         }
 
-        static void SmartPhone(ref SmartPhone smartPhone)
+        static void SmartPhoneObject(ref SmartPhone smartPhone)
         {
 
             Console.WriteLine("---Available OP---");
@@ -291,6 +278,51 @@ namespace MyOwn
             smartPhone.SimCardCount = simCardCount;
 
             
+
+        }
+
+        static void NoteBookObject(ref NoteBook noteBook)
+        {
+            Console.WriteLine("---Avialable Color---");
+            foreach (var item in Enum.GetValues(typeof(TypeColorNT)))
+            {
+                Console.WriteLine($"{item} - {(int)item}");
+            }
+            Console.WriteLine("-----------");
+
+            string colorStr1;
+            object color;
+            do
+            {
+                Console.Write("Color: ");
+                colorStr1 = Console.ReadLine();
+            } while (!Enum.TryParse(typeof(TypeColorNT), colorStr1, out color));
+
+            string processor;
+            do
+            {
+                Console.Write("Processor: ");
+                processor = Console.ReadLine();
+            } while (!NoteBook.CheckProcessor(processor));
+
+            string videCard;
+            do
+            {
+                Console.Write("VideoCard: ");
+                videCard = Console.ReadLine();
+            } while (!NoteBook.CheckVideoCard(videCard));
+
+            string ssdStr;
+            int ssd;
+            do
+            {
+                Console.Write("SSD: ");
+                ssdStr = Console.ReadLine();
+            } while (!int.TryParse(ssdStr, out ssd) && (ssd >= 0 && ssd <= 1024));
+        }
+
+        static void TvObject(ref Tv tv)
+        {
 
         }
 

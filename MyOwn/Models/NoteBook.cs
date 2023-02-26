@@ -14,7 +14,7 @@ namespace MyOwn.Models
         public TypeColorNT Color;
         string _processor;
         string _videoCard;
-        public byte SSD;
+        int _ssd;
         #endregion
 
         #region Propertys
@@ -39,6 +39,18 @@ namespace MyOwn.Models
                 if (CheckVideoCard(value))
                 {
                     _videoCard = value;
+                }
+            }
+        }
+
+        public int SSD
+        {
+            get { return _ssd; }
+            set
+            {
+                if (value > 0 && value <=1000)
+                {
+                    _ssd = value;
                 }
             }
         }
